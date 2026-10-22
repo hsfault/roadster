@@ -4,6 +4,7 @@ import useBarHeight from '../hooks/useBarHeight'
 import useActiveChapter from '../hooks/useActiveChapter'
 import { getLenis, scrollToId } from '../lib/smoothScroll'
 import ChapterMenu from './ChapterMenu'
+import Wordmark from './Wordmark'
 
 const EASE = [0.22, 1, 0.36, 1]
 
@@ -47,13 +48,14 @@ export default function Nav({ visible }) {
       >
         <a
           href="#return"
+          aria-label="Roadster — back to the start"
           onClick={(e) => {
             e.preventDefault()
             go('#return')
           }}
-          className="pointer-events-auto flex min-h-11 items-center pl-[0.45em] font-display text-xs font-light tracking-[0.45em] text-arctic uppercase sm:text-sm"
+          className="pointer-events-auto flex min-h-11 items-center"
         >
-          Roadster
+          <Wordmark className="w-24 sm:w-32" />
         </a>
 
         <div className="pointer-events-auto flex items-center gap-2 sm:gap-8">

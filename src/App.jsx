@@ -5,8 +5,15 @@ import Preloader from './components/Preloader'
 import Letterbox from './components/Letterbox'
 import Nav from './components/Nav'
 import TimecodeHUD from './components/TimecodeHUD'
+import ReelChapter from './components/ReelChapter'
+import ChapterTransition from './components/ChapterTransition'
+import ScrollRail from './components/ScrollRail'
 import Hero from './sections/Hero'
 import Silhouette from './sections/Silhouette'
+import Launch from './sections/Launch'
+import Configure from './sections/Configure'
+import Skin from './sections/Skin'
+import Reserve from './sections/Reserve'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -37,25 +44,49 @@ export default function App() {
       <Letterbox open={ready} />
       <Nav visible={ready} />
       <TimecodeHUD visible={ready} />
+      <ScrollRail visible={ready} />
+      <ChapterTransition />
       <div className="film-grain" aria-hidden="true" />
 
       <main className="relative">
         <Hero ready={ready} />
         <Silhouette />
 
-        {/* Temporary — replaced in Phase 3 */}
-        <section
+        <ReelChapter
           id="speed"
-          data-chapter="03"
-          className="grid min-h-svh place-items-center bg-void px-6 text-center"
-        >
-          <div>
-            <p className="font-mono text-[11px] tracking-[0.35em] text-reveal">03 — 1.9 SECONDS</p>
-            <p className="mt-4 text-2xl font-light text-bone sm:text-4xl">
-              Chapter three arrives in Phase 3.
-            </p>
-          </div>
-        </section>
+          no="03"
+          title="1.9 Seconds"
+          headline="It doesn't just accelerate. It leaves the ground."
+          body="Thrusters fire, the car rotates through the air, and it lands back on its wheels."
+          src="/media/video/reel-flip.mp4"
+          portrait
+          textSide="left"
+        />
+
+        <ReelChapter
+          id="ascension"
+          no="04"
+          title="Ascension"
+          headline="Up the wall. Upside down. Back to the ground."
+          body="Suction holds it to the track as it climbs the curve, hangs inverted at the top, then flies free and lands."
+          src="/media/video/reel-climb.mp4"
+          portrait
+          textSide="right"
+        />
+
+        <ReelChapter
+          id="range"
+          no="05"
+          title="620 Miles"
+          headline="Every surface, drawn to go further."
+          body="A slow walk around the whole car, from the wedge nose to the full-width light bar."
+          src="/media/video/reel-film.mp4"
+        />
+
+        <Launch />
+        <Configure />
+        <Skin />
+        <Reserve />
       </main>
     </>
   )

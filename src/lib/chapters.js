@@ -5,9 +5,9 @@ export const CHAPTERS = [
   { id: 'ascension', no: '04', title: 'Ascension', tc: '00:01:06' },
   { id: 'range', no: '05', title: '620 Miles', tc: '00:01:28' },
   { id: 'launch', no: '06', title: 'Launch Sequence', tc: '00:01:50' },
-  { id: 'numbers', no: '07', title: 'The Numbers', tc: '00:02:16' },
-  { id: 'configure', no: '08', title: 'Choose Your Light', tc: '00:02:34' },
-  { id: 'reserve', no: '09', title: 'Reserve', tc: '00:02:48' },
+  { id: 'configure', no: '07', title: 'Choose Your Light', tc: '00:02:12' },
+  { id: 'skin', no: '08', title: 'Under the Skin', tc: '00:02:32' },
+  { id: 'reserve', no: '09', title: 'Reserve', tc: '00:02:50' },
 ]
 
 // The whole page plays like a 3-minute film at 24fps

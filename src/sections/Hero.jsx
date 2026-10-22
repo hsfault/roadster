@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import FrameSequence from '../components/FrameSequence'
+import Wordmark from '../components/Wordmark'
 
 const EASE = [0.22, 1, 0.36, 1]
-const LETTERS = 'ROADSTER'.split('')
 
 export default function Hero({ ready }) {
   const ref = useRef(null)
@@ -51,22 +51,19 @@ export default function Hero({ ready }) {
             2028 CONCEPT · CHAPTER 01
           </motion.p>
 
-          <h1
-            aria-label="Roadster"
-            className="text-legible mt-5 flex justify-center pl-[0.32em] font-display text-[clamp(2.3rem,10vw,8rem)] leading-none font-extralight tracking-[0.32em] text-arctic"
-          >
-            {LETTERS.map((letter, i) => (
-              <motion.span
-                key={i}
-                aria-hidden="true"
-                initial={{ opacity: 0, y: '0.35em', filter: 'blur(12px)' }}
-                animate={ready ? { opacity: 1, y: '0em', filter: 'blur(0px)' } : undefined}
-                transition={{ duration: 1.2, delay: 0.7 + i * 0.07, ease: EASE }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
-            ))}
+          <h1 className="mt-5 flex justify-center" aria-label="Roadster">
+            <motion.div
+              initial={{ opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(10px)' }}
+              animate={
+                ready
+                  ? { opacity: 1, clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)' }
+                  : undefined
+              }
+              transition={{ duration: 1.6, delay: 0.7, ease: EASE }}
+              className="w-[min(78vw,46rem)]"
+            >
+              <Wordmark className="w-full" />
+            </motion.div>
           </h1>
 
           <motion.p
